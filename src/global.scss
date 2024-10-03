@@ -35,3 +35,19 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+.main-button {
+    --background: linear-gradient(90deg, rgba(102, 126, 234, 1) 0%, rgba(100, 102, 255, 1) 100%);
+    --box-shadow: none;
+    position: relative;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+ion-button:focus{
+    outline: none !important;
+}
+
+ion-buttons:focus{
+    outline: none !important;
+}

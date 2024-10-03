@@ -1,0 +1,62 @@
+ion-toolbar {
+    --border-width: 0 !important;
+    --background: white;
+    --color: black;
+}
+
+.header-md::after {
+    background: none !important;
+}
+
+.backbtn {
+    margin-left: 20px;
+}
+
+.form-container{
+    margin-top: 48px;
+}
+
+.form-container ion-item{
+    color: #74787E;
+    --border-color:#D4D7DB;
+    --highlight-color-focused:#647B9D;
+    --padding-start:0;
+    --inner-padding-end:0;
+    font-size: 15px;
+    ion-input{
+        color:#647B9D;
+    }
+    ion-icon{
+        padding-right: 6px;
+        font-size: 18px;
+    }
+    ion-input:hover{
+        color: #1248A0;
+    }
+}
+
+.form-container ion-button {
+    margin-top: 5px;
+}
+
+.forgot-password{
+    text-align: right;
+}
+
+.forgot-password ion-button {
+    --color: blue;
+    font-size: 12px; /* A more readable size, adjust as needed */
+    text-transform: none;
+    font-weight: normal;
+  }
+
+.sign-up{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.sign-up ion-button {
+    margin: 0;
+}

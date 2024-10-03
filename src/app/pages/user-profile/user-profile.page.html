@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>User Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="userProfileForm" (ngSubmit)="submitForm()">
+
+    <!-- Weight input -->
+    <ion-item>
+      <ion-label position="floating">Weight (kg)</ion-label>
+      <ion-input type="number" formControlName="weight"></ion-input>
+    </ion-item>
+    <ion-note *ngIf="userProfileForm.get('weight')?.touched && userProfileForm.get('weight')?.invalid" color="danger">
+      Please enter a valid weight between 20kg and 300kg.
+    </ion-note>
+
+    <!-- Height input -->
+    <ion-item>
+      <ion-label position="floating">Height (cm)</ion-label>
+      <ion-input type="number" formControlName="height"></ion-input>
+    </ion-item>
+    <ion-note *ngIf="userProfileForm.get('height')?.touched && userProfileForm.get('height')?.invalid" color="danger">
+      Please enter a valid height between 50cm and 250cm.
+    </ion-note>
+
+    <!-- Age input -->
+    <ion-item>
+      <ion-label position="floating">Age</ion-label>
+      <ion-input type="number" formControlName="age"></ion-input>
+    </ion-item>
+    <ion-note *ngIf="userProfileForm.get('age')?.touched && userProfileForm.get('age')?.invalid" color="danger">
+      Please enter a valid age between 5 and 120.
+    </ion-note>
+
+    <!-- Gender input -->
+    <ion-item>
+      <ion-label>Gender</ion-label>
+      <ion-select formControlName="gender">
+        <ion-select-option value="male">Male</ion-select-option>
+        <ion-select-option value="female">Female</ion-select-option>
+        <ion-select-option value="other">Other</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Activity Level input -->
+    <ion-item>
+      <ion-label>Activity Level</ion-label>
+      <ion-select formControlName="activityLevel">
+        <ion-select-option value="sedentary">Sedentary</ion-select-option>
+        <ion-select-option value="lightly active">Lightly Active</ion-select-option>
+        <ion-select-option value="moderately active">Moderately Active</ion-select-option>
+        <ion-select-option value="very active">Very Active</ion-select-option>
+        <ion-select-option value="extra active">Extra Active</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Workout Routine input (optional) -->
+    <ion-item>
+      <ion-label position="floating">Workout Routine</ion-label>
+      <ion-textarea formControlName="workoutRoutine"></ion-textarea>
+    </ion-item>
+
+    <!-- Submit Button -->
+    <ion-button expand="block" type="submit" [disabled]="!userProfileForm.valid">
+      Save Profile
+    </ion-button>
+
+  </form>
+</ion-content>

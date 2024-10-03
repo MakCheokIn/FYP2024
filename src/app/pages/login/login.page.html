@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button class="backbtn" routerLink="/welcome" rounterDirection="back">
+        <img src="../assets/back.svg" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+  
+<ion-content class="ion-padding">
+  <div class="ion-padding container">
+    <h1>Login</h1>
+  
+    <div class="form-container">
+     <ion-item>
+      <ion-icon name="mail-outline"></ion-icon>
+      <ion-input [(ngModel)]="email" type="email" name="email" placeholder="Email"></ion-input>
+      </ion-item>
+     <ion-item>
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <ion-input [(ngModel)]="password" type="password" name="password" placeholder="*******"></ion-input>
+     </ion-item>
+  
+    <div class="forgot-password">
+      <ion-button fill="clear" routerLink="/reset-password" routerDirection="forward">Forgot password?</ion-button>
+    </div>
+      <ion-button expand="block" class="main-button" (click)="login()">Log in</ion-button>
+    <div class="sign-up">
+      Don't have an account? <ion-button fill="clear" color="dark" routerLink="/register" rounterDirection="forward">Sign up</ion-button>
+    </div>
+  </div>
+ </div>
+</ion-content>
+  
