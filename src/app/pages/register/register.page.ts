@@ -10,6 +10,7 @@ export class RegisterPage implements OnInit {
   name: string = '';
   email: string = '';
   password: string = '';
+  errorMessage: string | null = null;
   
   constructor(private authService: AuthService) { }
 
@@ -20,8 +21,10 @@ export class RegisterPage implements OnInit {
     try {
       await this.authService.signUp(this.name, this.email, this.password);
       console.log('Signed up successfully');
-    } catch (error) {
+      this.errorMessage = null;  // Clear error message on success
+    } catch (error: any) { // Explicitly typing error as any
       console.error('Signup failed', error);
+      this.errorMessage = "Signup failed: " + (error.message || error); // Handle error message
     }
   }
 }
