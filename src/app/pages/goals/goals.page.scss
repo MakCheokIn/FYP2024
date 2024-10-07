@@ -1,0 +1,94 @@
+/* 根容器樣式，保持頁面居中和流暢的布局 */
+ion-content {
+    --background: linear-gradient(135deg, #f8f9fa, #e9ecef);  /* 背景漸變 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  /* 表單容器 */
+  form {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);  /* 添加陰影效果 */
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  /* 頁面標題樣式 */
+  ion-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* 表單項目 */
+  ion-item {
+    --padding-start: 0;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* 表單標籤 */
+  ion-label {
+    font-size: 18px;
+    font-weight: 500;
+    color: #495057;
+  }
+  
+  /* 輸入框和 checkbox */
+  ion-checkbox {
+    margin-left: auto;
+    --background: #adb5bd;
+    --color-checked: #28a745;
+    --border-color: #28a745;
+  }
+  
+  /* 提交按鈕樣式 */
+  ion-button[type="submit"] {
+    --background: linear-gradient(135deg, #28a745, #218838);  /* 綠色漸變 */
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+  }
+  
+  /* 提交按鈕的懸停效果 */
+  ion-button[type="submit"]:hover {
+    transform: translateY(-2px);  /* 輕微上移效果 */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);  /* 陰影增強 */
+  }
+  
+  /* 按鈕禁用狀態 */
+  ion-button[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  /* 彈出框的樣式 */
+  ion-alert {
+    --background: #f8f9fa;
+    --color: #212529;
+    --header-color: #28a745;
+    --button-color: #28a745;
+  }
+  
+  /* 微調間距 */
+  ion-item {
+    padding: 10px 0;
+  }
+  
+  ion-checkbox {
+    --size: 22px;
+    --border-radius: 50%;
+  }
+  
+  

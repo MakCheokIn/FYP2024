@@ -39,6 +39,10 @@ const routes: Routes = [
     path: 'user-profile',
     loadChildren: () => import('./pages/user-profile/user-profile.module').then( m => m.UserProfilePageModule)
   },
+  {
+    path: 'goals',
+    loadChildren: () => import('./pages/goals/goals.module').then( m => m.GoalsPageModule)
+  },
 ];
 
 @NgModule({

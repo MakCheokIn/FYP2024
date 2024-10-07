@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Set Your Goals</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="goalsForm" (ngSubmit)="submitGoals()">  <!-- Binding to goalsForm and submitGoals -->
+    <ion-item>
+      <ion-label>Lose Weight</ion-label>
+      <ion-checkbox formControlName="loseWeight"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Build Muscle</ion-label>
+      <ion-checkbox formControlName="buildMuscle"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Increase Stamina</ion-label>
+      <ion-checkbox formControlName="increaseStamina"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Improve Flexibility</ion-label>
+      <ion-checkbox formControlName="improveFlexibility"></ion-checkbox>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" [disabled]="!goalsForm.valid">Submit Goals</ion-button>
+  </form>
+</ion-content>

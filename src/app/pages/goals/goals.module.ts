@@ -4,18 +4,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DietPageRoutingModule } from './diet-routing.module';
+import { GoalsPageRoutingModule } from './goals-routing.module';
 
-import { DietPage } from './diet.page';
+import { GoalsPage } from './goals.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,  // <-- Make sure this is imported
+    ReactiveFormsModule,
     IonicModule,
-    DietPageRoutingModule
+    GoalsPageRoutingModule
   ],
-  declarations: [DietPage]
+  declarations: [GoalsPage]
 })
-export class DietPageModule {}
+export class GoalsPageModule {}

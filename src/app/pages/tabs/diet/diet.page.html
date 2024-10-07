@@ -1,13 +1,24 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>diet</ion-title>
+    <ion-title>Diet Plan</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">diet</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <form [formGroup]="dietForm" (ngSubmit)="submitDietForm()">
+    <ion-item>
+      <ion-label position="floating">Food Item</ion-label>
+      <ion-input type="text" formControlName="foodItem"></ion-input>
+    </ion-item>
+    <ion-button expand="block" type="submit">Get Nutrition Info</ion-button>
+  </form>
+
+  <!-- Display Diet Plan -->
+  <div *ngIf="nutritionInfo">
+    <h2>Nutrition Info for {{ nutritionInfo.name }}</h2>
+    <p>Calories: {{ nutritionInfo.calories }}</p>
+    <p>Sugar: {{ nutritionInfo.sugar_g }}g</p>
+    <p>Carbohydrates: {{ nutritionInfo.carbohydrates_total_g }}g</p>
+    <p>Fat: {{ nutritionInfo.fat_total_g }}g</p>
+  </div>
 </ion-content>

@@ -19,8 +19,7 @@ export class AuthService {
       }
 
       return result;
-    } catch (error) {
-      console.error("Error during sign up", error);
+    } catch (error: unknown) {
       throw error;
     }
   }
@@ -30,9 +29,37 @@ export class AuthService {
     try {
       const result = await this.afAuth.signInWithEmailAndPassword(email, password);
       return result;
-    } catch (error) {
-      console.error("Error during login", error);
+    } catch (error: unknown) {
       throw error;
     }
+  }
+
+  // Logout method
+  async logout() {
+    try {
+      await this.afAuth.signOut();
+    } catch (error: unknown) {
+      throw error;
+    }
+  }
+
+  // Reset Password method
+  async resetPassword(email: string) {
+    try {
+      await this.afAuth.sendPasswordResetEmail(email);
+    } catch (error: unknown) {
+      throw error;
+    }
+  }
+
+  // Get current authenticated user
+  getCurrentUser() {
+    return this.afAuth.authState;
+  }
+
+  // Method to get the current user ID
+  async getUserId(): Promise<string | null> {
+    const user = await this.afAuth.currentUser;
+    return user ? user.uid : null;
   }
 }
