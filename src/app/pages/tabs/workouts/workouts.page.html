@@ -1,44 +1,17 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Workout Recommendations</ion-title>
+    <ion-title>Workouts</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <!-- 用戶選擇肌肉群和難度 -->
-  <ion-item>
-    <ion-label>Muscle Group</ion-label>
-    <ion-select [(ngModel)]="selectedMuscle" (ionChange)="getExercises()">
-      <ion-select-option *ngFor="let muscle of muscles" [value]="muscle">
-        {{ muscle }}
-      </ion-select-option>
-    </ion-select>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Difficulty</ion-label>
-    <ion-select [(ngModel)]="selectedDifficulty" (ionChange)="getExercises()">
-      <ion-select-option *ngFor="let difficulty of difficulties" [value]="difficulty">
-        {{ difficulty }}
-      </ion-select-option>
-    </ion-select>
-  </ion-item>
-
-  <!-- 顯示推薦的健身項目 -->
-  <ion-list *ngIf="exercises.length > 0">
-    <ion-item *ngFor="let exercise of exercises">
+  <ion-list>
+    <ion-item *ngFor="let exercise of exercises" (click)="showExerciseDetail(exercise)">
       <ion-label>
         <h2>{{ exercise.name }}</h2>
-        <p>Type: {{ exercise.type }}</p>
-        <p>Muscle Group: {{ exercise.muscle }}</p>
-        <p>Difficulty: {{ exercise.difficulty }}</p>
+        <h3>Muscle Group: {{ exercise.muscle }}</h3>
         <p>Equipment: {{ exercise.equipment }}</p>
       </ion-label>
     </ion-item>
   </ion-list>
-
-  <!-- 如果沒有找到健身項目，顯示提示 -->
-  <ion-text *ngIf="exercises.length === 0">
-    <p>No exercises found for the selected muscle group and difficulty.</p>
-  </ion-text>
 </ion-content>

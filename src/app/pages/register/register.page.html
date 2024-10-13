@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-button class="backbtn" routerLink="/welcome" rounterDirection="back">
-        <img src="../../assets/back.svg" />
+        <img src="../../assets/icon/back.svg" />
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -27,6 +27,8 @@
         <ion-icon name="lock-closed-outline"></ion-icon>
         <ion-input [(ngModel)]="password" type="password" name="password" placeholder="Password"></ion-input>
       </ion-item>
+      
+      <ion-note *ngIf="errorMessage" color="danger">{{ errorMessage }}</ion-note>  <!-- Display error message -->
       
       <ion-button expand="block" class="main-button" (click)="signUp()">Sign up</ion-button>
       <div class="sign-up">

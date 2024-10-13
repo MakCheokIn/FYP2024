@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ exercise?.name }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img *ngIf="exercise.image" [src]="exercise.image"></ion-img>
+  <h3>Muscle Group: {{ exercise?.muscle }}</h3>
+  <h3>Equipment: {{ exercise?.equipment }}</h3>
+  <p>{{ exercise?.instructions }}</p>
+</ion-content>
